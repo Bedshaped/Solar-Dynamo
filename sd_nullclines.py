@@ -48,6 +48,11 @@ DY = g(X, Y, [a, b])
 
 # Plot our quiver, streamline and isoclines
 
+textstr = '\n'.join((
+    r'$a=%.2f$' % (a, ),
+    r'$b=%.2f$' % (b, )))
+props = dict(boxstyle='round', facecolor='wheat', alpha=0.5)
+
 plt.figure(1, figsize=(9, 6))
 plt.quiver(X[::5, ::5], Y[::5, ::5], DX[::5, ::5], DY[::5, ::5])
 plt.streamplot(X, Y, DX, DY)
@@ -77,6 +82,9 @@ else:
     plt.plot(0, iy[0], 'go', markersize = 10)
 plt.plot(0, iy[1], 'yo', markersize = 10, label = "Unstable fixed point")
 plt.legend()
+ax = plt.gca()
+ax.text(0.05, 0.15, textstr, transform=ax.transAxes, fontsize=14,
+        verticalalignment='top', bbox=props)
 
 fixed_points = np.array([[ix[0], 0.5*a], [ix[1], 0.5*a], [0, iy[0]], [0, iy[1]]])
 

@@ -47,6 +47,12 @@ for i in range(4):
 print(trace)
 print(determs)
 x = np.linspace(-8, 8, 100)
+
+textstr = '\n'.join((
+    r'$a=%.2f$' % (a, ),
+    r'$b=%.2f$' % (b, )))
+props = dict(boxstyle='round', facecolor='wheat', alpha=0.5)
+
 plt.figure(1, figsize=(6, 6))
 plt.plot(x, 0.25*x**2, 'k--')
 ax = plt.gca()
@@ -59,3 +65,6 @@ for i in range(4):
              label = r"(x, y) = (%4.1f, %4.1f)" % (fixed_points[i, 0], fixed_points[i, 1]))        
 plt.grid()
 plt.legend()
+ax = plt.gca()
+ax.text(0.05, 0.15, textstr, transform=ax.transAxes, fontsize=14,
+        verticalalignment='top', bbox=props)
