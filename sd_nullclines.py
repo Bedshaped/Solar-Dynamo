@@ -35,7 +35,7 @@ plt.close('all')
 
 # Parameters
 
-a, b = 2, 4
+a, b = 4, 4
 
 np.savetxt('params.txt', [a, b], fmt='%4.6f')
 

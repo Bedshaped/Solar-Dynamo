@@ -24,7 +24,7 @@ def coupledEqns(t, vals, params):
 params = np.genfromtxt('params.txt')
 
 t_0 = 0
-t_max = 6
+t_max = 4
 n = 1000
 
 # Initial values
@@ -36,7 +36,7 @@ n = 1000
 plt.figure(1, figsize=(9, 6))
 
 for i in [-2, -1, 0.25, -0.25, 1, 2]:
-    for j in [[-2.25, 'b-'], [-1, 'g-'], [0, 'r-']]:
+    for j in [[2.25, 'b-'], [1, 'g-'], [0, 'r-']]:
         initial_vals = [i, j[0]]
         res = solve_ivp(lambda t, y : coupledEqns(t, y, params),
                         [t_0, t_max],
