@@ -35,7 +35,7 @@ plt.close('all')
 
 # Parameters
 
-a, b = 4, 4
+a, b = 4, 2
 
 np.savetxt('params.txt', [a, b], fmt='%4.6f')
 
@@ -85,6 +85,7 @@ plt.legend()
 ax = plt.gca()
 ax.text(0.05, 0.15, textstr, transform=ax.transAxes, fontsize=14,
         verticalalignment='top', bbox=props)
+plt.savefig("sd_nullclines.png", dpi=300)
 
 fixed_points = np.array([[ix[0], 0.5*a], [ix[1], 0.5*a], [0, iy[0]], [0, iy[1]]])
 

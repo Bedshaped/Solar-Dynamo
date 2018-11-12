@@ -17,6 +17,7 @@ a, b = np.genfromtxt('params.txt')
 
 fixed_points = np.genfromtxt('fixed_points.txt')
 
+
 # Declaring our f and g
 
 x, y = sym.var('x, y')
@@ -68,3 +69,4 @@ plt.legend()
 ax = plt.gca()
 ax.text(0.05, 0.15, textstr, transform=ax.transAxes, fontsize=14,
         verticalalignment='top', bbox=props)
+plt.savefig("sd_jacobian.png", dpi=300)
